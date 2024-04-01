@@ -5,8 +5,21 @@
     <title>Test Template</title>
 </head>
 <body>
-{% for x in fruits %}
-    <h3>{{ x }}</h3>
-{% endfor %}
+<ul>
+  {% for x in fruits %}
+    <li
+      {% if forloop.first %}
+        style='background-color:lightblue;'
+      {% endif %} {# Everyone#}
+          {% if forloop.last %}
+        style='background-color:lightblue;'
+      {% endif %}
+    {% comment "this was the original welcome message" %}
+    {% endcomment %}
+    >{{ x }}</li>
+  {% endfor %}
+</ul>
+
+{% include 'footer.html' %}
 </body>
 </html>

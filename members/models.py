@@ -7,3 +7,6 @@ class Member(models.Model):
     email = models.EmailField(max_length=255)
     joined_date = models.DateField();
 
+    def __str__(self):
+        return f"{self.firstname} {self.lastname}"
+
