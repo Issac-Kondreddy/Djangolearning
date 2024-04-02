@@ -1,25 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'myfirst.css' %}">
     <title>Test Template</title>
 </head>
 <body>
-<ul>
-  {% for x in fruits %}
-    <li
-      {% if forloop.first %}
-        style='background-color:lightblue;'
-      {% endif %} {# Everyone#}
-          {% if forloop.last %}
-        style='background-color:lightblue;'
-      {% endif %}
-    {% comment "this was the original welcome message" %}
-    {% endcomment %}
-    >{{ x }}</li>
-  {% endfor %}
-</ul>
-
-{% include 'footer.html' %}
+{% for x in fruits %}
+  <h1>{{ x }}</h1>
+{% endfor %}
 </body>
+{% include 'footer.html' %}
 </html>
